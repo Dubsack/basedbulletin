@@ -104,7 +104,7 @@ const MainContent: React.FC = () => {
         address: CONTRACT_ADDRESS as `0x${string}`,
         abi: CONTRACT_ABI,
         functionName: 'createPost',
-        args: [newPost, FEE],
+        args: [newPost, FEE.toString()],
         value: BigInt(FEE * 1e18)
       })
 
