@@ -54,7 +54,7 @@ const ProfileSetup = ({ handleSetProfile }: ProfileSetupProps) => {
   );
 }
 
-export function MainContent() {
+export const MainContent: React.FC = (): JSX.Element => {
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
