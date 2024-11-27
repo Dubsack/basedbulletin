@@ -25,7 +25,7 @@ export async function getEthPrice(): Promise<number> {
     const data = await response.json()
     cachedPrice = data.ethereum.usd
     lastFetchTime = Date.now()
-    return cachedPrice
+    return cachedPrice !== null ? cachedPrice : FALLBACK_PRICE
   } catch (error) {
     console.error('Error fetching ETH price:', error)
     return cachedPrice || FALLBACK_PRICE
