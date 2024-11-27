@@ -10,11 +10,11 @@ import { ProfilePicture } from '../utils/ProfilePicture'
 import { handleDeletePost } from '../utils/deletePost'
 import { getEthPrice } from '../utils/getEthPrice'
 
-export interface ProfileSetupProps {
-  handleSetProfile: (username: string) => Promise<void>;
-}
+type ProfileSetupProps = {
+  handleSetProfile: (profile: any) => void; // Adjust the type as necessary
+};
 
-export function ProfileSetup({ handleSetProfile }: ProfileSetupProps) {
+const ProfileSetup = ({ handleSetProfile }: ProfileSetupProps) => {
   const [username, setUsername] = useState('');
   const [mounted, setMounted] = useState(false);
 
