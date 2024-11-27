@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react';
 import { useState, useEffect } from 'react'
 import { useAccount, useReadContract, useWriteContract } from 'wagmi'
 import { ConnectButton, lightTheme } from '@rainbow-me/rainbowkit'
@@ -54,7 +55,7 @@ const ProfileSetup = ({ handleSetProfile }: ProfileSetupProps) => {
   );
 }
 
-export const MainContent: React.FC = (): JSX.Element => {
+const MainContent: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
