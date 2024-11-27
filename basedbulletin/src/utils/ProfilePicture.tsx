@@ -10,11 +10,13 @@ interface ProfilePictureProps {
 }
 
 export function ProfilePicture({ address, className = "w-10 h-10" }: ProfilePictureProps) {
+  const formattedAddress = address.startsWith('0x') ? address : `0x${address}` as `0x${string}`;
+
   const { data: profile } = useReadContract({
     address: CONTRACT_ADDRESS as `0x${string}`,
     abi: CONTRACT_ABI,
     functionName: 'getProfile',
-    args: [address],
+    args: [formattedAddress as `0x${string}`],
   })
 
   return (
