@@ -75,7 +75,6 @@ const MainContent: React.FC = () => {
     abi: CONTRACT_ABI,
     functionName: 'getProfile',
     args: [address as `0x${string}`],
-    enabled: !!address && mounted
   })
 
   const { data: posts = [], isError, isLoading, refetch } = useReadContract({
@@ -83,7 +82,6 @@ const MainContent: React.FC = () => {
     abi: CONTRACT_ABI,
     functionName: 'getAllPosts',
     watch: false,
-    enabled: mounted
   })
 
   // Move all useEffect hooks here
