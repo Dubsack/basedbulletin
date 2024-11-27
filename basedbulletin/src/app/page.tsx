@@ -81,7 +81,6 @@ const MainContent: React.FC = () => {
     address: CONTRACT_ADDRESS as `0x${string}`,
     abi: CONTRACT_ABI,
     functionName: 'getAllPosts',
-    watch: false,
   })
 
   // Move all useEffect hooks here
