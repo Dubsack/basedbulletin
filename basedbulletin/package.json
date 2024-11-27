@@ -36,6 +36,9 @@
   },
   "homepage": "https://Dubsack.github.io/basedbulletin",
   "eslintConfig": {
-    
+    "extends": [
+      "next/core-web-vitals",
+      "next/typescript"
+    ]
   }
 }
