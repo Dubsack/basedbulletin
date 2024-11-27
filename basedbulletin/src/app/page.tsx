@@ -70,11 +70,14 @@ const MainContent: React.FC = () => {
   const [ethPrice, setEthPrice] = useState<number>(0)
   const FEE = 0.0001 // Fee in ETH
 
+  // Declare formattedAddress here
+  const formattedAddress = address?.startsWith('0x') ? address : `0x${address}` as `0x${string}`;
+
   const { data: userProfile } = useReadContract({
     address: CONTRACT_ADDRESS as `0x${string}`,
     abi: CONTRACT_ABI,
     functionName: 'getProfile',
-    args: [address as `0x${string}`],
+    args: [formattedAddress],
   })
 
   const { data: posts = [], isError, isLoading, refetch } = useReadContract({
