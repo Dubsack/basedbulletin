@@ -10,11 +10,10 @@ export function Feed() {
   const { address } = useAccount()
   const { writeContractAsync } = useWriteContract()
 
-  const { data: posts = [], isError, isLoading } = useReadContract({
+  const { data: posts = [], isError, isLoading, refetch } = useReadContract({
     address: CONTRACT_ADDRESS as `0x${string}`,
     abi: CONTRACT_ABI,
     functionName: 'getAllPosts',
-    watch: false
   })
 
   const handleSubmit = async (e: React.FormEvent) => {
