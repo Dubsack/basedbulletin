@@ -40,5 +40,6 @@
       "next/core-web-vitals",
       "next/typescript"
     ]
-  }
+  },
+  "type": "module"
 }
