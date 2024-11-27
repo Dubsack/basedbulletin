@@ -12,10 +12,10 @@ module.exports = defineConfig({
         // Your custom rules here
     },
     // Include plugins directly in the configuration
-    plugins: [
-        'react', // If you're using React
-        '@typescript-eslint', // If you're using TypeScript
-    ],
+    plugins: {
+        react: require('eslint-plugin-react'), // If you're using React
+        '@typescript-eslint': require('@typescript-eslint/eslint-plugin'), // If you're using TypeScript
+    },
     // Specify the parser
     parser: '@typescript-eslint/parser', // Use the TypeScript parser if you're using TypeScript
 });
