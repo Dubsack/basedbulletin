@@ -10,7 +10,7 @@ export function AuthorDisplay({ address }: { address: string }) {
     address: CONTRACT_ADDRESS as `0x${string}`,
     abi: CONTRACT_ABI,
     functionName: 'getProfile',
-    args: [address],
+    args: [address as `0x${string}`],
     onError: (error) => {
       console.error('Error fetching profile:', error)
       setError(true)
