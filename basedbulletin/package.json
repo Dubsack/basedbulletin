@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --useEslintrc --extensions .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --extensions .js,.jsx,.ts,.tsx",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
