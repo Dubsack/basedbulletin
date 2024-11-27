@@ -11,21 +11,20 @@ export function AuthorDisplay({ address }: { address: string }) {
     abi: CONTRACT_ABI,
     functionName: 'getProfile',
     args: [address as `0x${string}`],
-    onError: (error) => {
-      console.error('Error fetching profile:', error)
-      setError(true)
-      setDisplayName(`${address.slice(0, 6)}...${address.slice(-4)}`)
-    },
   })
 
   useEffect(() => {
-    if (profile && profile.username) {
+    if (isError) {
+      console.error('Error fetching profile')
+      setError(true)
+      setDisplayName(`${address.slice(0, 6)}...${address.slice(-4)}`)
+    } else if (profile && profile.username) {
       setDisplayName(profile.username)
       setError(false)
     } else if (!error) {
       setDisplayName(`${address.slice(0, 6)}...${address.slice(-4)}`)
     }
-  }, [profile, address, error])
+  }, [profile, address, error, isError])
 
   useEffect(() => {
     if (error) {
