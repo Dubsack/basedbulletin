@@ -128,7 +128,7 @@ const MainContent: React.FC = () => {
       const img = document.createElement('img');
       img.src = imageUrl;
       
-      const compressedImageUrl = await new Promise((resolve, reject) => {
+      const compressedImageUrl = await new Promise<string>((resolve, reject) => {
         img.onload = () => {
           // Create canvas
           const canvas = document.createElement('canvas');
@@ -177,7 +177,7 @@ const MainContent: React.FC = () => {
         address: CONTRACT_ADDRESS as `0x${string}`,
         abi: CONTRACT_ABI,
         functionName: 'updateProfilePicture',
-        args: [compressedImageUrl], // Using the compressed URL instead of original
+        args: [compressedImageUrl as string],
       });
 
       setImageUrl('');
